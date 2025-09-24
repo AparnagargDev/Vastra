@@ -321,7 +321,7 @@ function ManageProduct()
                 {
                 editmode?
                 <>
-                    <img src={`/${picname}`} alt="" height='100'/>
+                    <img src={`${picname}`} alt="" height='100'/>
                     Choose new image, if required
                 </>:null
             }

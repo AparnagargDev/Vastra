@@ -132,7 +132,7 @@ function Details()
 					<div className="grid images_3_of_2">
 						<ul id="etalage">
 							<li>
-							<img className="etalage_thumb_image img-responsive" src={`/${proddata.picture}`} alt="" />
+							<img className="etalage_thumb_image img-responsive" src={`${proddata.picture}`} alt="" />
 							</li>
 							
 						</ul>

@@ -32,7 +32,7 @@ function extractPublicIdFromUrl(url) {
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "vastra_uploads", // Cloudinary folder
+    folder: "vastra_s", // Cloudinary folder
     allowed_formats: ["jpg", "png", "jpeg", "webp"],
   }
 });
