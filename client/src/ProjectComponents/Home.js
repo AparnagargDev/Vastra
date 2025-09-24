@@ -24,7 +24,7 @@ function Home() {
 
     async function fetchlatestprods() {
         try {
-            const resp = await axios.get(`http://localhost:9000/api/fetchnewprods`);
+            const resp = await axios.get(`${process.env.REACT_APP_API_URL}/api/fetchnewprods`);
             if (resp.status === 200) {
                 if (resp.data.statuscode === 1) {
                     setprodsdata(resp.data.proddata);
