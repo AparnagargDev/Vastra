@@ -12,7 +12,7 @@ function ShowCart()
     {
         try
         {
-            const resp =  await axios.get(`http://localhost:9000/api/getcart?uemail=${udata.email}`)
+            const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/getcart?uemail=${udata.email}`)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)
@@ -58,7 +58,7 @@ function ShowCart()
         var userresp=window.confirm("Are you sure to delete");
         if(userresp===true)
         {
-            const resp =  await axios.delete(`http://localhost:9000/api/delcartitem/${id}`);
+            const resp =  await axios.delete(`${process.env.REACT_APP_API_URL}/api/delcartitem/${id}`);
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)

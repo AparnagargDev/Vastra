@@ -19,7 +19,7 @@ function Products()
     {
         try
         {
-            const resp =  await axios.get(`http://localhost:9000/api/fetchprodsbycatid?cid=${catid}`)
+            const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/fetchprodsbycatid?cid=${catid}`)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)

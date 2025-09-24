@@ -65,7 +65,7 @@ function ListofUsers()
         var userresp=window.confirm("Are you sure to delete");
         if(userresp===true)
         {
-            const resp = await axios.delete(`http://localhost:9000/api/deluser/${id}`);
+            const resp = await axios.delete(`${process.env.REACT_APP_API_URL}/api/deluser/${id}`);
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)

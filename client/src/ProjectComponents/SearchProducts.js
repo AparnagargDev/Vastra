@@ -19,7 +19,7 @@ function SearchProducts() {
     {
         try
         {
-            const resp =  await axios.get(`http://localhost:9000/api/searchproducts?q=${sterm}`)
+            const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/searchproducts?q=${sterm}`)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)

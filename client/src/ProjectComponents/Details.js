@@ -54,7 +54,7 @@ function Details()
     {
         try
         {
-            const resp =  await axios.get(`http://localhost:9000/api/getproddetails?pid=${prodid}`)
+            const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/getproddetails?pid=${prodid}`)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)

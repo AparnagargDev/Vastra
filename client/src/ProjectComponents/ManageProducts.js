@@ -90,7 +90,7 @@ function ManageProduct()
         {
             try
             {
-                const resp =  await axios.get(`http://localhost:9000/api/fetchprodsbycatid?cid=${catid}`)
+                const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/fetchprodsbycatid?cid=${catid}`)
                 if(resp.status===200)
                 {
                     if(resp.data.statuscode===1)
@@ -132,7 +132,7 @@ function ManageProduct()
                 formdata.append("picture",picture)
             }
 
-            const resp =  await axios.post(`http://localhost:9000/api/saveproduct`,formdata)
+            const resp =  await axios.post(`${process.env.REACT_APP_API_URL}/api/saveproduct`,formdata)
             if(resp.status===200)
             {
                if(resp.data.statuscode===1)
@@ -179,7 +179,7 @@ function ManageProduct()
             formdata.append("prodid",pid);
             console.log(formdata)
 
-            const resp =  await axios.put(`http://localhost:9000/api/updateproduct`,formdata)
+            const resp =  await axios.put(`${process.env.REACT_APP_API_URL}/api/updateproduct`,formdata)
             if(resp.status===200)
             {
                if(resp.data.statuscode===1)
@@ -213,7 +213,7 @@ function ManageProduct()
         var userresp=window.confirm("Are you sure you want to delete this product?");
         if(userresp===true)
         {
-            const resp = await axios.delete(`http://localhost:9000/api/delproduct/${id}`);
+            const resp = await axios.delete(`${process.env.REACT_APP_API_URL}/api/delproduct/${id}`);
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)

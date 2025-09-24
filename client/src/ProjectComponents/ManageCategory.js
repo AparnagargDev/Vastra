@@ -45,7 +45,7 @@ function ManageCategory()
                     formdata.append("catpic",cpic)
                 }
             
-            const resp =  await axios.post(`http://localhost:9000/api/savecategory`,formdata)
+            const resp =  await axios.post(`${process.env.REACT_APP_API_URL}/api/savecategory`,formdata)
             if(resp.status===200)
             {
                if(resp.data.statuscode===1)
@@ -116,7 +116,7 @@ function ManageCategory()
             }
             formdata.append("oldpicname",picname)
             formdata.append("cid",catid);
-            const resp =  await axios.put(`http://localhost:9000/api/updatecategory`,formdata)
+            const resp =  await axios.put(`${process.env.REACT_APP_API_URL}/api/updatecategory`,formdata)
             if(resp.status===200)
             {
                if(resp.data.statuscode===1)
@@ -150,7 +150,7 @@ function ManageCategory()
         var userresp=window.confirm("Are you sure you want to delete this category?");
         if(userresp===true)
         {
-            const resp = await axios.delete(`http://localhost:9000/api/delcat/${id}`);
+            const resp = await axios.delete(`${process.env.REACT_APP_API_URL}/api/delcat/${id}`);
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)
