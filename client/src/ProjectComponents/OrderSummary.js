@@ -10,7 +10,7 @@ function OrderSummary() {
     {
         try
         {
-            const resp =  await axios.get("http://localhost:9000/api/getorderid?un=" + udata.email)
+            const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/getorderid?un=` + udata.email)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)

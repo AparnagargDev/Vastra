@@ -94,7 +94,7 @@ function Details()
             const cartdata = {pid:proddata._id,picture:proddata.picture,pname:proddata.pname,rate:remcost,qty:qty,tc:tc,email:udata.email}
             try
             {
-                const resp =  await axios.post("http://localhost:9000/api/savetocart",cartdata)
+                const resp =  await axios.post(`${process.env.REACT_APP_API_URL}/api/savetocart`,cartdata)
                 if(resp.status===200)
                 {
                     if(resp.data.statuscode===0)

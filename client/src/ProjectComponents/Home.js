@@ -63,7 +63,7 @@ function Home() {
                             prodsdata.map((item, index) => (
                                 <div className="arriv-left" key={index}>
                                     <Link to={`/details?pid=${item._id}`}>
-                                        <img title=" " alt=" " src={`/${item.picture}`} height="200" width="400" />
+                                        <img title=" " alt=" " src={`${item.picture}`} height="200" width="400" />
                                     </Link>
                                     <p className="total-item p" style={{ color: 'black' }}>{item.pname}</p>
                                 </div>

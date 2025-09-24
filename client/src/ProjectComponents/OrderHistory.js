@@ -13,7 +13,7 @@ function OrderHistory() {
     {
         try
         {
-            const resp =  await axios.get("http://localhost:9000/api/getuserorders?un=" + udata.email)
+            const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/getuserorders?un=` + udata.email)
             console.log(resp.data.orderdata); 
             if(resp.status===200)
             {

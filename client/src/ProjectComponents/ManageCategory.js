@@ -74,7 +74,7 @@ function ManageCategory()
     {
         try
         {
-           const resp = await axios.get("http://localhost:9000/api/getallcat")
+           const resp = await axios.get(`${process.env.REACT_APP_API_URL}/api/getallcat`)
 		   if (resp.status===200)
 		    {
 			   if(resp.data.statuscode===1)

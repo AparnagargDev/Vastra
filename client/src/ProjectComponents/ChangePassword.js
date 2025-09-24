@@ -32,7 +32,7 @@ function ChangePassword()
 		{
             if(newpass===cnewpass)
             {   
-		      const resp = await axios.put("http://localhost:9000/api/changepassword",apidata)
+		      const resp = await axios.put(`${process.env.REACT_APP_API_URL}/api/changepassword`,apidata)
 		      if (resp.status===200)
 		        {
                     if(resp.data.statuscode===0)

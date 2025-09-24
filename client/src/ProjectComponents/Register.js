@@ -29,7 +29,7 @@ function Register()
 						const regdata={fullname,phoneno,email,pass,gender}
 						try
 		               {
-			             const resp=await axios.post("http://localhost:9000/api/signup",regdata)
+			             const resp=await axios.post(`${process.env.REACT_APP_API_URL}/api/signup`,regdata)
 			             toast.success(resp.data.msg)
 						}
 					   catch(e)
@@ -59,7 +59,7 @@ function Register()
 		const logindata={email,password}
 		try
 		{
-		const resp = await axios.post("http://localhost:9000/api/login",logindata)
+		const resp = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`,logindata)
 		if (resp.status===200)
 		{
 			if(resp.data.statuscode===0)

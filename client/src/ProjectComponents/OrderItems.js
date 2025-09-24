@@ -11,7 +11,7 @@ function OrderItems() {
     {
         try
         {
-            const resp =  await axios.get("http://localhost:9000/api/getorderproducts?orderno=" + orderid)
+            const resp =  await axios.get(`${process.env.REACT_APP_API_URL}/api/getorderproducts?orderno=` + orderid)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===1)
@@ -68,7 +68,7 @@ function OrderItems() {
                             {
                                 orderitems.map((item,index)=>
                                 <tr key={index}>
-                                    <td><img src={`/${item.picture}`} height="100" width="200"/></td>
+                                    <td><img src={`${item.picture}`} height="100" width="200"/></td>
                                     <td>{item.ProdName}</td>
                                     <td>{item.Rate}</td>
                                     <td>{item.Qty}</td>

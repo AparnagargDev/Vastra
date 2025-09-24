@@ -37,7 +37,7 @@ function Checkout() {
         const checkoutdata = {state,city,pincode,area,tbill:sessionStorage.getItem("tbill"),email:udata.email,phoneno:udata.phoneno,name:udata.fullname,pmode,carddetails,cartinfo};
         try
         {
-            const resp =  await axios.post("http://localhost:9000/api/saveorder",checkoutdata)
+            const resp =  await axios.post(`${process.env.REACT_APP_API_URL}/api/saveorder`,checkoutdata)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===0)
@@ -83,7 +83,7 @@ function Checkout() {
         const cartinfo = {cartinfo:JSON.parse(sessionStorage.getItem("cartdata"))};
         try
         {
-            const resp =  await axios.put("http://localhost:9000/api/updatestock",cartinfo)
+            const resp =  await axios.put(`${process.env.REACT_APP_API_URL}/api/updatestock`,cartinfo)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===0)
@@ -109,7 +109,7 @@ function Checkout() {
     {
         try
         {
-            const resp =  await axios.delete("http://localhost:9000/api/deletecart?un=" + udata.email)
+            const resp =  await axios.delete(`${process.env.REACT_APP_API_URL}/api/deletecart?un=` + udata.email)
             if(resp.status===200)
             {
                 if(resp.data.statuscode===0)
